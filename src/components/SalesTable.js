@@ -58,7 +58,7 @@ const SalesTable = ({ productData, requestApiData }) => {
 
 SalesTable.propTypes = {
   productData: PropType.object,
-  requestApiData: PropType.function,
+  requestApiData: PropType.func,
 };
 
 export default ContentContainer(SalesTable);

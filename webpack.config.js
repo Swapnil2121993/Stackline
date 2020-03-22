@@ -1,12 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
+    path: path.resolve(__dirname, 'build/'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
 
   devtool: 'source-map',
@@ -40,5 +41,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve('./index.html'),
     }),
+
+    new CopyWebpackPlugin([
+      {
+        from: './data.json',
+        to: path.resolve(__dirname, 'build/'),
+      },
+    ]),
   ],
 };

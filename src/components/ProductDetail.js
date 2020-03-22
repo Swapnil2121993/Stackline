@@ -37,7 +37,7 @@ const ProductDetail = ({ productData, requestApiData }) => {
 
 ProductDetail.propTypes = {
   productData: PropType.object,
-  requestApiData: PropType.function,
+  requestApiData: PropType.func,
 };
 
 export default ContentContainer(ProductDetail);
